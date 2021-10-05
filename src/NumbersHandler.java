@@ -17,25 +17,31 @@ public class NumbersHandler {
         double sum = 0;
         if(!listOfNumbers.isEmpty()){
             for (Double num : listOfNumbers) {
-                sum =+ num;
+                sum += num;
             }
             return sum / listOfNumbers.size();
         }
         return 0;
     }
 
-    public void addNumberToList(double num) {
-        if (listOfNumbers.isEmpty()) {
-            largestCurrentNumber = num;
-            smallestCurrentNumber = num;
-        } else {
-            if (num > largestCurrentNumber) {
+    public void addNumberToList(String inputAsString) {
+        double num;
+        try {
+            num = Double.parseDouble(inputAsString);
+            if (listOfNumbers.isEmpty()) {
                 largestCurrentNumber = num;
-            }
-            if (num < smallestCurrentNumber) {
                 smallestCurrentNumber = num;
+            } else {
+                if (num > largestCurrentNumber) {
+                    largestCurrentNumber = num;
+                }
+                if (num < smallestCurrentNumber) {
+                    smallestCurrentNumber = num;
+                }
             }
+            listOfNumbers.add(num);
+        } catch (NumberFormatException e) {
+            System.err.println("User input is invalid, only numbers allowed");
         }
-        listOfNumbers.add(num);
     }
 }

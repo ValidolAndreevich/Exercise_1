@@ -9,7 +9,7 @@ public class Program {
         String inputAsString = "";
 
         while (!inputAsString.equals("E")){
-            System.out.println("Controls: L - largest number, S - smallest number, A - average of numbers");
+            System.out.println("Controls: L - largest number, S - smallest number, A - average of numbers, E - exit");
             System.out.print("Your input: ");
 
             inputAsString = input.nextLine();
@@ -27,11 +27,7 @@ public class Program {
                     System.out.println("Quitting the program");
                     break;
                 default:
-                    try {
-                        numbersHandler.addNumberToList(Double.parseDouble(inputAsString));
-                    } catch (NumberFormatException e) {
-                        System.err.println("User input is invalid, only numbers allowed");
-                    }
+                    numbersHandler.addNumberToList(inputAsString);
             }
         }
     }
