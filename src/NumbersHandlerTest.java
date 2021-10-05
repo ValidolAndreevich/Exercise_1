@@ -49,7 +49,7 @@ class NumbersHandlerTest {
         assertEquals(expResult,actResult);
     }
 
-    @Test()
+    @Test
     void exceptionOnStringAdd() {
         String input = "some invalid value";
         assertDoesNotThrow(() -> handler.addNumberToList(input));
