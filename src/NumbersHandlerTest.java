@@ -8,7 +8,7 @@ class NumbersHandlerTest {
 
     @Test
     void averageMethodGetsEmptyList() {
-        double expResult = 0;
+        final double expResult = 0;
         double actResult = handler.findAverageCurrent();
         assertEquals(expResult,actResult);
     }
@@ -20,7 +20,7 @@ class NumbersHandlerTest {
         handler.addNumberToList("-7");
         handler.addNumberToList("2.5");
         handler.addNumberToList("-1.5");
-        double expResult = -0.6;
+        final double expResult = -0.6;
         double actResult = handler.findAverageCurrent();
         assertEquals(expResult,actResult);
     }
@@ -32,7 +32,7 @@ class NumbersHandlerTest {
         handler.addNumberToList("0");
         handler.addNumberToList("47");
         handler.addNumberToList("47.001");
-        double expResult = 47.001;
+        final double expResult = 47.001;
         double actResult = handler.getLargestCurrentNumber();
         assertEquals(expResult,actResult);
     }
@@ -44,14 +44,14 @@ class NumbersHandlerTest {
         handler.addNumberToList("0");
         handler.addNumberToList("0.5");
         handler.addNumberToList("17.001");
-        double expResult = -1.001;
+        final double expResult = -1.001;
         double actResult = handler.getSmallestCurrentNumber();
         assertEquals(expResult,actResult);
     }
 
     @Test()
     void exceptionOnStringAdd() {
-        String input = "string value";
-        assertDoesNotThrow(() -> {handler.addNumberToList(input);});
+        String input = "some invalid value";
+        assertDoesNotThrow(() -> handler.addNumberToList(input));
     }
 }

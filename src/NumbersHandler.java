@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class NumbersHandler {
     private double largestCurrentNumber;
     private double smallestCurrentNumber;
-    private ArrayList<Double> listOfNumbers = new ArrayList<>();
+    private final ArrayList<Double> listOfNumbers = new ArrayList<>();
 
     public double getLargestCurrentNumber() {
         return largestCurrentNumber;
